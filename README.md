@@ -27,7 +27,11 @@ http://localhost:5000/
 
 Možda ti je port 5000 zabranjen na firewallu pa ga moraš enejblati ako želiš otvoriti tu stranicu na drugom kompjuteru.
 
-* Pokretanje web aplikacije unutar Apache servera na portu 80 je kompliciranije. Ovo je najjednostavnija procedura ako si na debian distribuciji. Kreiraj webapp conf fajl u apache2 direktoriju:
+* Pokretanje web aplikacije unutar Apache servera na portu 80 je kompliciranije. Ovo je najjednostavnija procedura ako si na debian distribuciji. Prvo instaliraj mod-wsgi:
+
+    sudo apt-get install -y libapache2-mod-wsgi
+
+Zatim kreiraj webapp conf fajl u apache2 direktoriju:
 
     sudo nano /etc/apache2/sites-available/webapp
 
