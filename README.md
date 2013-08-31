@@ -1,6 +1,6 @@
 * Instaliraj Flask
 
-> sudo pip install Flask
+    sudo pip install Flask
 
 Ako ti javi grešku da pip ne postoji onda ga instaliraj sa:
 
