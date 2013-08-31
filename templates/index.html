@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <p>
+        Wellcome to our restaurant!
+    </p>
+
+    <p>
+        <a href="/order"/>Order Food</a>
+    </p>
+
+    {% if numOrders > 0 %}
+    <p>
+        You have {{ numOrders }} order(s).
+    </p>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <form method="POST">
+        <fieldset>
+            <legend>Order Form</legend>
+
+            <p>
+                <label for="dessert">Desert</label>
+                <input id="dessert" type="text" name="dessert" required="1"></input>
+            </p>
+
+            <p>
+                <input type="checkbox" name="mitVanillaSauce">Mit vanilla sauce</input>
+            </p>
+
+            <p>
+                <button type="submit">Submit</button>
+            </p>
+        </fieldset>
+    </form>
+
+{% endblock %}
