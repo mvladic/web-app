@@ -10,10 +10,23 @@
         <a href="/order"/>Order Food</a>
     </p>
 
-    {% if numOrders > 0 %}
+    {% if orders %}
     <p>
-        You have {{ numOrders }} order(s).
+        You have {{ orders|length }} order(s).
+        <ul>
+        {% for order in orders %}
+            <li>
+                {{ order.dessert }}
+                {% if order.mitVanillaSauce %}
+                    mit vanilla sauce
+                {% endif %}                
+            </li>
+        {% endfor %}
+        </ul>        
+        <a href="/clear"/>Clear</a>
     </p>
+    {% else %}
+        You have no order.
     {% endif %}
 
 {% endblock %}

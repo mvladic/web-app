@@ -13,15 +13,12 @@ def addOrder(dessert, mitVanillaSauce):
         'mitVanillaSauce': mitVanillaSauce
     })
 
-def getNumOrders():
-    orders = session.get('orders', [])
-    return len(orders)
-
 
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html', numOrders=getNumOrders())
+    orders = session.get('orders', [])
+    return render_template('index.html', orders=orders)
 
 @app.route('/order', methods=['POST', 'GET'])
 def order():
@@ -33,6 +30,10 @@ def order():
     else:
         return render_template('order.html')
 
+@app.route('/clear', methods=['GET'])
+def clear():
+    session.pop('orders', None)
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
